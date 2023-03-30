@@ -2,9 +2,7 @@
 
 # Get the directory of the script
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
-
-# Build the Docker image
-docker build -t duplicate-document:latest "${SCRIPT_DIR}/duplicate_document"
+PYTHON_DIR="${SCRIPT_DIR}/document-duplicate"
 
 # Parse command line arguments
 clear_image=false
@@ -36,10 +34,13 @@ if [[ -z "${cred_file}" ]]; then
     exit 1
 fi
 
+# Build the Docker image
+docker build -t document-duplicate:latest "${PYTHON_DIR}" >> "${PYTHON_DIR}/tmp"  
+
 # Run the Docker container with the provided parameters
 docker run --rm \
     -v "$(realpath "${cred_file}"):/app/credentials.json" \
-    duplicate-document:latest \
+    document-duplicate:latest \
     python duplicate_document.py \
     -D "${document_id}" \
     -t "${title}" \

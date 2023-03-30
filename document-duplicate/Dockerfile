@@ -5,7 +5,7 @@ FROM python:3.8-slim
 WORKDIR /app
 
 # Copy the script and requirements.txt (if you have one) into the container
-COPY duplicate_document.py /app/
+COPY document_duplicate.py /app/
 COPY requirements.txt /app/
 
 # Install any needed packages specified in requirements.txt
@@ -15,4 +15,4 @@ RUN pip install --trusted-host pypi.python.org -r requirements.txt
 EXPOSE 80
 
 # Run duplicate_document.py when the container launches
-CMD ["python", "duplicate_document.py"]
+CMD ["python", "document_duplicate.py"]

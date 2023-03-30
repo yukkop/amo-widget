@@ -4,9 +4,9 @@ from googleapiclient.errors import HttpError
 from google.oauth2 import service_account
 import sys
 
-def create_document(title, return_link=False):
+def create_document(title, return_link=False, credentials='./creditations.json'):
     try:
-        creds = service_account.Credentials.from_service_account_file('./creditations.json')
+        creds = service_account.Credentials.from_service_account_file(credentials)
         docs_service = build('docs', 'v1', credentials=creds)
 
         document = docs_service.documents().create(
@@ -57,8 +57,9 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Create a new Google Document.')
     parser.add_argument('-t', '--title', required=True, help='The title of the new document.')
     parser.add_argument('-l', '--link', action='store_true', help='Return the document link instead of the document ID.')
+    parser.add_argument('-C', '--credentials', required=True, help='Path to the service account credentials file.')
 
     args = parser.parse_args()
 
-    result = create_document(args.title, args.link)
+    result = create_document(args.title, args.link, args.credentials)
     print(result)

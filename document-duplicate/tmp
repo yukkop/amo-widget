@@ -1,0 +1,102 @@
+Sending build context to Docker daemon   5.12kB
+Step 1/7 : FROM python:3.8-slim
+ ---> 11e809a5ec52
+Step 2/7 : WORKDIR /app
+ ---> Using cache
+ ---> 62413184dd4e
+Step 3/7 : COPY document_duplicate.py /app/
+ ---> 8bad079e78ea
+Step 4/7 : COPY requirements.txt /app/
+Sending build context to Docker daemon  6.656kB
+Step 1/7 : FROM python:3.8-slim
+ ---> 11e809a5ec52
+Step 2/7 : WORKDIR /app
+ ---> Using cache
+ ---> 62413184dd4e
+Step 3/7 : COPY document_duplicate.py /app/
+ ---> Using cache
+ ---> 8bad079e78ea
+Step 4/7 : COPY requirements.txt /app/
+ ---> bc1246d86616
+Step 5/7 : RUN pip install --trusted-host pypi.python.org -r requirements.txt
+ ---> Running in d13fe3739008
+Collecting google-auth==1.35.0
+  Downloading google_auth-1.35.0-py2.py3-none-any.whl (152 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 152.9/152.9 KB 3.6 MB/s eta 0:00:00
+Collecting google-auth-oauthlib==0.4.6
+  Downloading google_auth_oauthlib-0.4.6-py2.py3-none-any.whl (18 kB)
+Collecting google-auth-httplib2==0.1.0
+  Downloading google_auth_httplib2-0.1.0-py2.py3-none-any.whl (9.3 kB)
+Collecting google-api-python-client==2.26.1
+  Downloading google_api_python_client-2.26.1-py2.py3-none-any.whl (7.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.6/7.6 MB 4.1 MB/s eta 0:00:00
+Collecting pyasn1-modules>=0.2.1
+  Downloading pyasn1_modules-0.2.8-py2.py3-none-any.whl (155 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 155.3/155.3 KB 4.0 MB/s eta 0:00:00
+Collecting cachetools<5.0,>=2.0.0
+  Downloading cachetools-4.2.4-py3-none-any.whl (10 kB)
+Collecting rsa<5,>=3.1.4
+  Downloading rsa-4.9-py3-none-any.whl (34 kB)
+Requirement already satisfied: setuptools>=40.3.0 in /usr/local/lib/python3.8/site-packages (from google-auth==1.35.0->-r requirements.txt (line 1)) (57.5.0)
+Collecting six>=1.9.0
+  Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+Collecting requests-oauthlib>=0.7.0
+  Downloading requests_oauthlib-1.3.1-py2.py3-none-any.whl (23 kB)
+Collecting httplib2>=0.15.0
+  Downloading httplib2-0.22.0-py3-none-any.whl (96 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 96.9/96.9 KB 4.2 MB/s eta 0:00:00
+Collecting uritemplate<5,>=3.0.0
+  Downloading uritemplate-4.1.1-py2.py3-none-any.whl (10 kB)
+Collecting google-api-core<3.0.0dev,>=1.21.0
+  Downloading google_api_core-2.11.0-py3-none-any.whl (120 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 120.3/120.3 KB 3.9 MB/s eta 0:00:00
+Collecting requests<3.0.0dev,>=2.18.0
+  Downloading requests-2.28.2-py3-none-any.whl (62 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.8/62.8 KB 3.7 MB/s eta 0:00:00
+Collecting googleapis-common-protos<2.0dev,>=1.56.2
+  Downloading googleapis_common_protos-1.59.0-py2.py3-none-any.whl (223 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 223.6/223.6 KB 4.2 MB/s eta 0:00:00
+Collecting protobuf!=3.20.0,!=3.20.1,!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<5.0.0dev,>=3.19.5
+  Downloading protobuf-4.22.1-cp37-abi3-manylinux2014_x86_64.whl (302 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 302.4/302.4 KB 4.1 MB/s eta 0:00:00
+Collecting google-api-core<3.0.0dev,>=1.21.0
+  Downloading google_api_core-2.10.2-py3-none-any.whl (115 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 115.6/115.6 KB 4.2 MB/s eta 0:00:00
+Collecting pyparsing!=3.0.0,!=3.0.1,!=3.0.2,!=3.0.3,<4,>=2.4.2
+  Downloading pyparsing-3.0.9-py3-none-any.whl (98 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.3/98.3 KB 4.0 MB/s eta 0:00:00
+Collecting pyasn1<0.5.0,>=0.4.6
+  Downloading pyasn1-0.4.8-py2.py3-none-any.whl (77 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 77.1/77.1 KB 4.1 MB/s eta 0:00:00
+Collecting oauthlib>=3.0.0
+  Downloading oauthlib-3.2.2-py3-none-any.whl (151 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 151.7/151.7 KB 4.1 MB/s eta 0:00:00
+Collecting urllib3<1.27,>=1.21.1
+  Downloading urllib3-1.26.15-py2.py3-none-any.whl (140 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 140.9/140.9 KB 4.0 MB/s eta 0:00:00
+Collecting charset-normalizer<4,>=2
+  Downloading charset_normalizer-3.1.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (195 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 195.9/195.9 KB 4.0 MB/s eta 0:00:00
+Collecting certifi>=2017.4.17
+  Downloading certifi-2022.12.7-py3-none-any.whl (155 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 155.3/155.3 KB 4.2 MB/s eta 0:00:00
+Collecting idna<4,>=2.5
+  Downloading idna-3.4-py3-none-any.whl (61 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.5/61.5 KB 3.9 MB/s eta 0:00:00
+Installing collected packages: pyasn1, urllib3, uritemplate, six, rsa, pyparsing, pyasn1-modules, protobuf, oauthlib, idna, charset-normalizer, certifi, cachetools, requests, httplib2, googleapis-common-protos, google-auth, requests-oauthlib, google-auth-httplib2, google-api-core, google-auth-oauthlib, google-api-python-client
+Successfully installed cachetools-4.2.4 certifi-2022.12.7 charset-normalizer-3.1.0 google-api-core-2.10.2 google-api-python-client-2.26.1 google-auth-1.35.0 google-auth-httplib2-0.1.0 google-auth-oauthlib-0.4.6 googleapis-common-protos-1.59.0 httplib2-0.22.0 idna-3.4 oauthlib-3.2.2 protobuf-4.22.1 pyasn1-0.4.8 pyasn1-modules-0.2.8 pyparsing-3.0.9 requests-2.28.2 requests-oauthlib-1.3.1 rsa-4.9 six-1.16.0 uritemplate-4.1.1 urllib3-1.26.15
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[0m[91mWARNING: You are using pip version 22.0.4; however, version 23.0.1 is available.
+You should consider upgrading via the '/usr/local/bin/python -m pip install --upgrade pip' command.
+[0mRemoving intermediate container d13fe3739008
+ ---> a3b371639999
+Step 6/7 : EXPOSE 80
+ ---> Running in a246a07f540d
+Removing intermediate container a246a07f540d
+ ---> ac2d8aac22d1
+Step 7/7 : CMD ["python", "document_duplicate.py"]
+ ---> Running in 703bb1244149
+Removing intermediate container 703bb1244149
+ ---> df59d8aded59
+Successfully built df59d8aded59
+Successfully tagged document-duplicate:latest
