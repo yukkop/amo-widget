@@ -16,19 +16,19 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
 
     this.callbacks = {
       render: function () {
-        console.log('render');
+        // console.log('render');
     
-        // Add the "Documents" tab to the order card
-        var $documentsTab = $(
-          '<div class="card-tabs__item js-card-tab custom_widget_documents_tab">Documents</div>'
-        );
+        // // Add the "Documents" tab to the order card
+        // var $documentsTab = $(
+        //   '<div class="card-tabs__item js-card-tab custom_widget_documents_tab">Documents</div>'
+        // );
 
-        $('.card-tabs').append($documentsTab);
+        // $('.card-tabs').append($documentsTab);
     
-        // Bind the tab click action
-        $documentsTab.on('click', function () {
-          self.handleDocumentsTabClick();
-        });
+        // // Bind the tab click action
+        // $documentsTab.on('click', function () {
+        //   self.handleDocumentsTabClick();
+        // });
     
         return true;
       },
@@ -36,10 +36,10 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
       handleDocumentsTabClick: function () {
       },
       init: _.bind(function () {
-        console.log('google document widget init v1.0.6');
+        console.log('google document widget init v1.0.9');
 
         AMOCRM.addNotificationCallback(self.get_settings().widget_code, function (data) {
-          console.log(data)
+          console.log('some strange data: ', data)
         });
 
         this.add_action("phone", function (params) {
@@ -110,9 +110,9 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
           console.log('tasks');
         }
       },
-      loadCatalogElement: function (catalog_element) {
-        console.log('Редактирование элемента каталога #' + catalog_element.id);
-      },
+      // loadCatalogElement: function (catalog_element) {
+      //   console.log('Редактирование элемента каталога #' + catalog_element.id);
+      // },
       advancedSettings: _.bind(function () {
         var $work_area = $('#work-area-' + self.get_settings().widget_code),
           $save_button = $(
