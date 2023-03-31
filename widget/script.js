@@ -17,10 +17,26 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
     this.callbacks = {
       render: function () {
         console.log('render');
+    
+        // Add the "Documents" tab to the order card
+        var $documentsTab = $(
+          '<div class="card-tabs__item js-card-tab custom_widget_documents_tab">Documents</div>'
+        );
+
+        $('.card-tabs').append($documentsTab);
+    
+        // Bind the tab click action
+        $documentsTab.on('click', function () {
+          self.handleDocumentsTabClick();
+        });
+    
         return true;
       },
+      // Add a new function to handle the "Documents" tab click
+      handleDocumentsTabClick: function () {
+      },
       init: _.bind(function () {
-        console.log('google document widget init');
+        console.log('google document widget init v1.0.6');
 
         AMOCRM.addNotificationCallback(self.get_settings().widget_code, function (data) {
           console.log(data)
@@ -68,10 +84,11 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
       settings: function () {
         return true;
       },
-      onSave: function () {
-        alert('click');
+      onSave: _.bind(function () {
+        console.log('on save, try to save cotalog');
+        this.setSdkCatalogId(this.params.catalog_id);
         return true;
-      },
+      }, self),
       destroy: function () {
 
       },
@@ -92,6 +109,9 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
         selected: function () {
           console.log('tasks');
         }
+      },
+      loadCatalogElement: function (catalog_element) {
+        console.log('Редактирование элемента каталога #' + catalog_element.id);
       },
       advancedSettings: _.bind(function () {
         var $work_area = $('#work-area-' + self.get_settings().widget_code),
@@ -146,6 +166,7 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
        *
        * @return {{}}
        */
+
       onSalesbotDesignerSave: function (handler_code, params) {
         var salesbot_source = {
             question: [],

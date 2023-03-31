@@ -3,7 +3,7 @@
     "name": "widget.name",
     "description": "widget.description",
     "short_description": "widget.short_description",
-    "version": "1.0.1",
+    "version": "1.0.6",
     "interface_version": 2,
     "init_once": true,
     "locale": [
@@ -17,15 +17,19 @@
     }
   },
   "locations": [
-    "ccard-1",
-    "clist-0",
     "lcard-1",
     "llist-0",
+    "ccard-1",
+    "clist-0",
+    "comcard-0",
+    "card_sdk",
     "settings",
     "digital_pipeline",
-    "advanced_settings",
-    "salesbot_designer"
-  ],
+    "lead_sources",
+    "whatsapp_modal",
+    "catalogs",
+    "advanced_settings"
+  ],       
   "tour": {
     "is_tour": true,
     "tour_images": {
