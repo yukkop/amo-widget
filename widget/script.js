@@ -18,7 +18,7 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
       render: function () {
         // console.log('render');
     
-        // // Add the "Documents" tab to the order card
+        // Add the "Documents" tab to the order card
         // var $documentsTab = $(
         //   '<div class="card-tabs__item js-card-tab custom_widget_documents_tab">Documents</div>'
         // );
@@ -33,10 +33,10 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
         return true;
       },
       // Add a new function to handle the "Documents" tab click
-      handleDocumentsTabClick: function () {
+      handleTabClick: function () {
       },
       init: _.bind(function () {
-        console.log('google document widget init v1.0.9');
+        console.log('google document widget init v1.0.13');
 
         AMOCRM.addNotificationCallback(self.get_settings().widget_code, function (data) {
           console.log('some strange data: ', data)
@@ -85,8 +85,8 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
         return true;
       },
       onSave: _.bind(function () {
-        console.log('on save, try to save cotalog');
-        this.setSdkCatalogId(this.params.catalog_id);
+        // console.log('on save, try to save cotalog');
+        // this.setSdkCatalogId(this.params.catalog_id);
         return true;
       }, self),
       destroy: function () {
